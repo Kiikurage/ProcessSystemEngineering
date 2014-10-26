@@ -1,0 +1,18 @@
+#!/bin/bash
+
+T2=-15
+
+#clear output file
+echo > output
+
+for ((N=1; N<=5; N++))
+do
+
+for ((C0=1; C0<=10; C0++))
+do
+	c0=`echo "scale=2;$C0/100"|bc`
+	result=`./work $N $c0 $T2`
+	echo $N $c0 $T2 $result >> output
+done
+
+done
